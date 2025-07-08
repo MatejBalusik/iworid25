@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="180">
+  <title>iWoRID 2025 Slideshow</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      position: absolute;
+      display: none;
+    }
+    img.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <img src="https://cdn.glitch.global/819a6b84-43d5-4311-8d27-0dc04734a73c/1.png?v=1751957294045" class="active" id="slide1">
+  <img src="https://cdn.glitch.global/819a6b84-43d5-4311-8d27-0dc04734a73c/2.png?v=1751957315085" id="slide2">
+  <img src="https://cdn.glitch.global/819a6b84-43d5-4311-8d27-0dc04734a73c/3.png?v=1751957379079" id="slide3">
+  <img src="https://cdn.glitch.global/819a6b84-43d5-4311-8d27-0dc04734a73c/4.png?v=1751957365196" id="slide4">
+  <img src="https://cdn.glitch.global/819a6b84-43d5-4311-8d27-0dc04734a73c/5.png?v=1751957367485" id="slide5">
+  
+  <script>
+    const slides = document.querySelectorAll("img");
+    let current = 0;
+    console.log(slides);
+    setInterval(() => {
+      slides[current].classList.remove("active");
+      current = (current + 1) % slides.length;
+      slides[current].classList.add("active");
+    }, 10000);
+  </script>
+</body>
+</html>
